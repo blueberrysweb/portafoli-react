@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import llista from "./Llista";
+import { llista } from "./Llista";
 
 export default function Layout() {
   return (
@@ -24,7 +24,7 @@ export default function Layout() {
             ))}
           </ul>
         </nav>
-        <aside class="HolyGrail-ads">…</aside>
+        {/* <aside class="HolyGrail-ads">…</aside> */}
       </div>
       <Footer />
     </>

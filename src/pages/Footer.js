@@ -1,3 +1,6 @@
+import { llistafooter } from "./Llista";
+import { Link } from "react-router-dom";
+
 export function Footer() {
   return (
     <>
@@ -11,13 +14,6 @@ export function Footer() {
                 <Link to={item.path}>{item.titol}</Link>
               </li>
             ))}
-
-            <li class="lifooter">
-              <a href="como-funciona.html">Como funciona</a>
-            </li>
-            <li class="lifooter">
-              <a href="contacto.html">Contacto</a>
-            </li>
           </ul>
         </div>
         <div>
