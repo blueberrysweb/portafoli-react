@@ -1,4 +1,4 @@
-import { llistafooter } from "./Llista";
+import { llistaSoporte, llistafooter, llistaLegal } from "./Llista";
 import { Link } from "react-router-dom";
 
 export function Footer() {
@@ -19,23 +19,21 @@ export function Footer() {
         <div>
           <ul class="ulfooter">
             <li class="lifooter">Soperte</li>
-            <li class="lifooter">
-              <a href="">Preguntas frecuentes</a>
-            </li>
-            <li class="lifooter">
-              <a href="">Reglas de publicación</a>
-            </li>
+            {llistaSoporte.map((item) => (
+              <li class="lifooter">
+                <Link to={item.path}>{item.titol}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
           <ul class="ulfooter">
             <li class="lifooter">Legal</li>
-            <li class="lifooter">
-              <a href="legal/condiciones-de-uso.html">Condiciones de uso</a>
-            </li>
-            <li class="lifooter">
-              <a href="legal/condiciones-de-uso.html">Política de privacidad</a>
-            </li>
+            {llistaLegal.map((item) => (
+              <li class="lifooter">
+                <Link to={item.path}>{item.titol}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
