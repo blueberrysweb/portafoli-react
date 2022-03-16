@@ -8,11 +8,11 @@ export default function Layout() {
     <>
       <Header />
 
-      <div class="HolyGrail-body">
-        <main class="HolyGrail-content">
+      <div className="HolyGrail-body">
+        <main className="HolyGrail-content">
           <Outlet />
         </main>
-        <nav class="HolyGrail-nav">
+        <nav className="HolyGrail-nav">
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -24,7 +24,7 @@ export default function Layout() {
             ))}
           </ul>
         </nav>
-        {/* <aside class="HolyGrail-ads">…</aside> */}
+        {/* <aside className="HolyGrail-ads">…</aside> */}
       </div>
       <Footer />
     </>

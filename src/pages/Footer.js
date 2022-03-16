@@ -4,56 +4,56 @@ import { Link } from "react-router-dom";
 export function Footer() {
   return (
     <>
-      <div class="footercontent">
+      <div className="footercontent">
         <div></div>
         <div>
-          <ul class="ulfooter">
-            <li class="lifooter">Ivan Pala</li>
+          <ul className="ulfooter">
+            <li className="lifooter">Ivan Pala</li>
             {llistafooter.map((item) => (
-              <li class="lifooter">
+              <li className="lifooter">
                 <Link to={item.path}>{item.titol}</Link>
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <ul class="ulfooter">
-            <li class="lifooter">Soperte</li>
+          <ul className="ulfooter">
+            <li className="lifooter">Soperte</li>
             {llistaSoporte.map((item) => (
-              <li class="lifooter">
+              <li className="lifooter">
                 <Link to={item.path}>{item.titol}</Link>
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <ul class="ulfooter">
-            <li class="lifooter">Legal</li>
+          <ul className="ulfooter">
+            <li className="lifooter">Legal</li>
             {llistaLegal.map((item) => (
-              <li class="lifooter">
+              <li className="lifooter">
                 <Link to={item.path}>{item.titol}</Link>
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <ul class="ulfooter">
-            <li class="lifooter">Profesionales</li>
-            <li class="lifooter">
+          <ul className="ulfooter">
+            <li className="lifooter">Profesionales</li>
+            <li className="lifooter">
               <a href="">Negocios</a>
             </li>
           </ul>
         </div>
       </div>
-      <div class="pieDiv">
-        <ul class="ulmenu">
-          <li class="limenu">
+      <div className="pieDiv">
+        <ul className="ulmenu">
+          <li className="limenu">
             <a href="#home">facebook</a>
           </li>
-          <li class="limenu">
+          <li className="limenu">
             <a href="#news">youtube</a>
           </li>
-          <li class="limenu">
+          <li className="limenu">
             <a href="#contact">instagram</a>
           </li>
         </ul>

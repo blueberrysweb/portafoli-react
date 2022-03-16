@@ -1,28 +1,25 @@
-const initalState = [
-  { task: "redux", done: false },
-  { task: "react", done: false },
-  { task: "flux", done: false },
-  { task: "vue", done: true },
-  { task: "angular", done: true },
+const initialState = [
+  {
+    id: 1,
+    content: "Primera tasca",
+    done: true,
+  },
+  {
+    id: 2,
+    content: "Segona tasca",
+    done: false,
+  },
 ];
-const todoReducer = (state = initalState, action) => {
-  let copy = [...state];
-  switch (action.type) {
-    case "ADD_LIST":
-      copy.push({ task: action.payload, done: false });
-      return copy;
-    case "CLEAR_TASK":
-      copy.splice(action.payload, 1);
-      return copy;
-    case "DONE_TASK":
-      copy[action.payload].done = true;
-      return copy;
-    case "UNDO_TASK":
-      copy[action.payload].done = false;
-      return copy;
 
-    case "CLEAR_LIST":
-      return [];
+const todoReducer = (state = initialState, action) => {
+  let newlist = [...state];
+  switch (action.type) {
+    case "ADD_TASK":
+      newlist.push({ content: action.payload, done: false });
+      return newlist;
+    case "ELIMINAR_TASK":
+      let list = newlist.filter((value, index) => value !== index);
+      return list;
     default:
       return state;
   }

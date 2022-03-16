@@ -5,14 +5,14 @@ export function Header() {
         <img src="img/logoMascotanuncio.png" width="55" height="55" />
       </div>
       <div>
-        <ul class="ulmenu">
-          <li class="limenu">
+        <ul className="ulmenu">
+          <li className="limenu">
             <a href="#home">Ivan Palacios</a>
           </li>
-          <li class="limenu">
+          <li className="limenu">
             <a href="#news">Descargar</a>
           </li>
-          <li class="limenu">
+          <li className="limenu">
             <a href="#contact">Productos</a>
           </li>
         </ul>
