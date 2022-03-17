@@ -18,8 +18,11 @@ const todoReducer = (state = initialState, action) => {
       newlist.push({ content: action.payload, done: false });
       return newlist;
     case "ELIMINAR_TASK":
-      let list = newlist.filter((value, index) => value !== index);
-      return list;
+      newlist.splice(action.payload, 1);
+      return newlist;
+    case "RESET":
+      return initialState;
+
     default:
       return state;
   }

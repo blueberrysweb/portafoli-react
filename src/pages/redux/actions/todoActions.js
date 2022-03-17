@@ -12,3 +12,8 @@ export const eliminartask = (item) => {
     payload: item,
   };
 };
+export const reset = () => {
+  return {
+    type: "RESET",
+  };
+};
