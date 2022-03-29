@@ -18,7 +18,7 @@ export function Footer() {
         </div>
         <div>
           <ul className="ulfooter">
-            <li className="lifooter">Soperte</li>
+            <li className="lifooter">Soporte</li>
             {llistaSoporte.map((item) => (
               <li className="lifooter">
                 <Link to={item.path}>{item.titol}</Link>

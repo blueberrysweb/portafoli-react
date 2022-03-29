@@ -6,6 +6,7 @@ import Reglaspublicacion from "./soporte/Reglas-publicacion";
 import Preguntasfrecuentes from "./soporte/Preguntas-frecuentes";
 import Todolist from "./TodoList";
 import Counter from "./Counter";
+import ListTodo from "./LlistaTodo/ListaTodo";
 
 export const llista = [
   {
@@ -17,6 +18,11 @@ export const llista = [
     path: "todolist",
     titol: "Todo List",
     element: <Todolist />,
+  },
+  {
+    path: "listatodo",
+    titol: "Lista Todo",
+    element: <ListTodo />,
   },
   {
     path: "counter",

@@ -1,0 +1,6 @@
+li {
+  cursor: pointer;
+}
+li.completed {
+  text-decoration: line-through;
+}
