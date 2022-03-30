@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { getTodos } from "./todosApi";
 import "./llistatodo.css";
 import { AfegirTodo } from "./AfegirTodo";
-import { TodoItem } from "./TodoItem";
-
-export const ENDPOINT = "https://tc-todo-2022.herokuapp.com/todos";
+import { Todollist } from "./Todollist";
 
 export default function ListTodo() {
   const [todos, setTodos] = useState([]);
@@ -16,30 +14,23 @@ export default function ListTodo() {
     }, 1500);
     return () => clearInterval(intervaLID);
   }, []);
+  const onTodoAded = (todo) => setTodos([...todos, todo]);
   return (
     <>
       <div>
         <h1>Lista de todos</h1>
         <button onClick={() => getTodos().then(setTodos)}>Refresh</button>
-        <ul>
-          {todos.map((todo) => (
-            <TodoItem
-              key={todo.id}
-              todo={todo}
-              onUpdated={(updatedTodo) =>
-                setTodos(
-                  todos.map((currentTodo) =>
-                    currentTodo.id === updatedTodo.id
-                      ? updatedTodo
-                      : currentTodo
-                  )
-                )
-              }
-            />
-          ))}
-        </ul>
-        <AfegirTodo onTodoAdded={(todo) => setTodos([...todos, todo])} />
+        <Todollist todos={todos} onUpdated={onTodoUpdated(setTodos, todos)} />
+        <AfegirTodo onTodoAdded={onTodoAded} />
       </div>
     </>
   );
+}
+function onTodoUpdated(setTodos, todos) {
+  return (updatedTodo) =>
+    setTodos(
+      todos.map((currentTodo) =>
+        currentTodo.id === updatedTodo.id ? updatedTodo : currentTodo
+      )
+    );
 }
