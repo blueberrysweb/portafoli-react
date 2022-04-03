@@ -1,36 +1,17 @@
-import { useEffect, useState } from "react";
-import { getTodos } from "./todosApi";
-import "./llistatodo.css";
+import { useEffect, useReducer } from "react";
 import { AfegirTodo } from "./AfegirTodo";
-import { Todollist } from "./Todollist";
 import {
-  REPLACE_TODOS,
-  ADD_TODO,
-  UPDATE_TODO,
   replaceTodos,
   addTodo,
   updateTodo,
 } from "./actions";
-
-const initialState = [];
-
-function reduceTodos(state = initialState, action) {
-  switch (action.type) {
-    case REPLACE_TODOS:
-      return action.todos;
-    case ADD_TODO:
-      return [...state, action.todo];
-    case UPDATE_TODO:
-      return state.map((currentTodo) =>
-        currentTodo.id === action.todo.id ? action.todo : currentTodo
-      );
-    default:
-      return state;
-  }
-}
+import { Todollist } from "./Todollist";
+import { getTodos } from "./todosApi";
+import "./llistatodo.css";
+import { initialState, reduceTodos } from "./reducers";
 
 export default function ListTodo() {
-  const [todos, setTodos] = useState([]);
+  const [todos, dispatch] = useReducer(reduceTodos, initialState);
 
   useEffect(() => {
     loadTodos();
@@ -38,14 +19,14 @@ export default function ListTodo() {
     return () => clearInterval(intervaLID);
   }, []);
 
-  const loadTodos = () =>
-    getTodos().then((allTodos) =>
-      setTodos(reduceTodos(todos, replaceTodos(allTodos)))
-    );
 
-  const onTodoAded = (todo) => setTodos(reduceTodos(todos, addTodo(todo)));
-  const onTodoUpdated = (updatedTodo) =>
-    setTodos(reduceTodos(todos, updateTodo(updatedTodo)));
+  const loadTodos = () =>
+    getTodos().then((all) => dispatch(replaceTodos(all)));
+
+  const onTodoAded = (todo) => dispatch(addTodo(todo));
+  
+  const onTodoUpdated = (todo) =>
+    dispatch(updateTodo(todo));
 
   return (
     <>
