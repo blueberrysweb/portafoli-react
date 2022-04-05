@@ -7,12 +7,38 @@ import Preguntasfrecuentes from "./soporte/Preguntas-frecuentes";
 import Todolist from "./TodoList";
 import Counter from "./Counter";
 import ListTodo from "./LlistaTodo/ListaTodo";
+import  Galeria  from "./Galeria";
+import Calculadora from "./Calculadora";
+import Acordio from "./Acordio";
+import ToggleButton from "./ToggleButton";
+import Vector from "./vector";
+import Comptador from "./Comptador";
 
 export const llista = [
   {
-    path: "condicionesdeuso",
-    titol: "Condiciones de uso",
-    element: <Condicionesdeuso />,
+    path: "galeria",
+    titol: "Galeria",
+    element: <Galeria />,
+  },
+  {
+    path: "togglrbutton",
+    titol: "Toggle Button",
+    element: <ToggleButton />,
+  },
+  {
+    path: "comptador",
+    titol: "Comptador",
+    element: <Comptador />,
+  },
+  {
+    path: "acordio",
+    titol: "Acordio",
+    element: <Acordio />,
+  },
+  {
+    path: "calculadora",
+    titol: "Calculadora",
+    element: <Calculadora />,
   },
   {
     path: "todolist",
@@ -28,6 +54,11 @@ export const llista = [
     path: "counter",
     titol: "Counter",
     element: <Counter />,
+  },
+  {
+    path: "vectors",
+    titol: "Exer Vectors",
+    element: <Vector />,
   },
 ];
 

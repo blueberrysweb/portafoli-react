@@ -11,3 +11,133 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.Calculadora {
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.Display {
+  text-align: right;
+  background-color: black;
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 10px;
+  font-family: monospace;
+}
+
+.Butons,
+.Numeros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: rgb(244, 238, 229);
+}
+
+:is(.Butons, .Numeros) button {
+  background: lightgoldenrodyellow;
+  flex: 0 0 33%;
+  padding: 20px 0;
+  cursor: pointer;
+}
+
+.Butons {
+  background-color: aquamarine;
+}
+.Butons button {
+  background-color: aquamarine;
+}
+
+.Numeros button:hover {
+  background-color: aliceblue;
+}
+.Numeros button:active {
+  background-color: gray;
+}
+.imgPetit {
+  width: 200px;
+  height: 200px;
+  border-radius: 250px;
+  padding: 20px;
+}
+.imgGran {
+  width: 500px;
+  height: 500px;
+  border-radius: 250px;
+}
+.imgnull {
+  display: none;
+}
+
+/* css comptador */
+.marc {
+  display: flex;
+
+  background-color: rgb(147, 151, 158);
+  width: 200px;
+  height: 400px;
+  border: 2px solid black;
+}
+.display {
+  background-color: rgb(246, 246, 157);
+  border: 2px solid black;
+  width: 90%;
+  height: 10%;
+}
+
+.txtp {
+  font-size: 12px;
+}
+.txtl {
+  display: none;
+}
+
+.txt {
+  font-size: 12px;
+}
+.txt2 {
+  display: none;
+}
+.Contcal {
+  border: 5px solid rgba(26, 5, 5, 0.747);
+  padding: 10px 10px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 610px;
+  height: auto;
+  background-color: rgba(7, 1, 1, 0.384);
+}
+.Display {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: rgb(21, 21, 19);
+  border-radius: 7px;
+  margin: 5px;
+  font-size: 50px;
+  color: rgb(250, 249, 249);
+}
+.Botonera {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  width: 610px;
+  column-gap: 50px;
+  row-gap: 10px;
+  align-items: flex-start;
+  justify-content: center;
+}
+.Btn1,
+.Btn5 {
+  background-color: beige;
+  height: 90px;
+  font-size: 50px;
+}
+
+.Btn1 {
+  width: 250px;
+}
+.Btn5 {
+  width: 90%;
+  margin: 0 5px 0 5px;
+}
